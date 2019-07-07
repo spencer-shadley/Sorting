@@ -2,7 +2,7 @@
 
 namespace Sort
 {
-    public class DefaultArraySort : ISort<int[]>
+    public class DefaultArraySort : ISort
     {
         public int[] Sort(int[] arr) {
             Array.Sort(arr);

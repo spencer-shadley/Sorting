@@ -4,15 +4,19 @@ using Sort;
 namespace TestSort
 {
     [TestClass]
-    public class TestSort
-    {
+    public class TestSort {
+        public static ISort[] Sorts = new ISort[] {new DefaultArraySort()};
+
         [TestMethod]
         public void TestSort_Simple() {
-            ISort<int[]> sort = new DefaultArraySort();
-            int[] actual = sort.Sort(new[] {1, 9, 5, 3, 2});
-            var expected = new int[] {1, 2, 3, 5, 9};
+            VerifySort(input: new[] { 1, 9, 5, 3, 2 }, expected: new int[] { 1, 2, 3, 5, 9 });
+        }
 
-            CollectionAssert.AreEqual(expected, actual);
+        public static void VerifySort(int[] input, int[] expected) {
+            foreach (ISort sort in Sorts) {
+                int[] actual = sort.Sort(input);
+                CollectionAssert.AreEqual(expected, actual);
+            }
         }
     }
 }
