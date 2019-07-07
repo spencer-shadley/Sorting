@@ -27,14 +27,23 @@ namespace TestSort
         }
 
         [TestMethod]
-        public void TestSort_Fuzz() {
-            const uint arrSize = 100;
-            const int randomRange = 10;
+        public void TestSort_Fuzz_Small()
+        {
+            VerifyFuzz(10, 10);
+        }
 
+        [TestMethod]
+        public void TestSort_Fuzz_Large()
+        {
+            VerifyFuzz(10000, 10000000);
+        }
+
+        public static void VerifyFuzz(uint arrSize, int range) {
             var random = new Random();
             var input = new int[arrSize];
-            for (int i = 0; i < arrSize; ++i) {
-                input[i] = random.Next(minValue: -randomRange, maxValue: randomRange);
+            for (int i = 0; i < arrSize; ++i)
+            {
+                input[i] = random.Next(minValue: -range, maxValue: range);
             }
 
             var arr = (int[])input.Clone();
