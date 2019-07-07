@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sort", "ConsoleApp1\Sort.csproj", "{1238CE7E-1EF0-4447-8741-4657CE155339}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sort", "Sort\Sort.csproj", "{1238CE7E-1EF0-4447-8741-4657CE155339}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSort", "UnitTestProject1\TestSort.csproj", "{73A5D7ED-68FF-47A7-B942-0D2609766BB1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSort", "TestSort\TestSort.csproj", "{73A5D7ED-68FF-47A7-B942-0D2609766BB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

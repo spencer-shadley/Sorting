@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleApp1\Sort.csproj" />
+    <ProjectReference Include="..\Sort\Sort.csproj" />
   </ItemGroup>
 
 </Project>
