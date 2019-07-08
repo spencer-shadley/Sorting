@@ -7,8 +7,8 @@ namespace TestSort
     [TestClass]
     public class TestSort {
         public static ISort[] Sorts = new ISort[] {
-            //new DefaultArraySort(),
-            //new BubbleSort(),
+            new DefaultArraySort(),
+            new BubbleSort(),
             new MergeSort()
         };
 
