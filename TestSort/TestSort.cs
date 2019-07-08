@@ -6,7 +6,10 @@ namespace TestSort
 {
     [TestClass]
     public class TestSort {
-        public static ISort[] Sorts = new ISort[] {new DefaultArraySort()};
+        public static ISort[] Sorts = new ISort[] {
+            new DefaultArraySort(),
+            new BubbleSort()
+        };
 
         [TestMethod]
         public void TestSort_Simple()
