@@ -1,6 +1,6 @@
 ﻿namespace Sort
 {
     public interface ISort {
-        int[] Sort(int[] unsorted);
+        int[] Sort(int[] arr);
     }
 }

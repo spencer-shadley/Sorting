@@ -4,28 +4,28 @@ namespace Sort
 {
     public class BubbleSort : ISort
     {
-        public int[] Sort(int[] unsorted) {
-            if (unsorted == null) {
+        public int[] Sort(int[] arr) {
+            if (arr == null) {
                 throw new ArgumentNullException();
             }
 
             bool wasSwapped = false;
             do {
-                for (int i = 0; i < unsorted.Length - 1; ++i) {
+                for (int i = 0; i < arr.Length - 1; ++i) {
                     wasSwapped = false;
 
-                    int left = unsorted[i];
-                    int right = unsorted[i + 1];
+                    int left = arr[i];
+                    int right = arr[i + 1];
 
                     if (left <= right) continue;
 
-                    unsorted[i] = right;
-                    unsorted[i + 1] = left;
+                    arr[i] = right;
+                    arr[i + 1] = left;
                     wasSwapped = true;
                 }
             } while (wasSwapped);
 
-            return unsorted;
+            return arr;
         }
     }
 }
