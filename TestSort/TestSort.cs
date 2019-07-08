@@ -15,6 +15,14 @@ namespace TestSort
         }
 
         [TestMethod]
+        public void TestSort_Null()
+        {
+            foreach (ISort sort in Sorts) {
+                Assert.ThrowsException<ArgumentNullException>(() => sort.Sort(null));
+            }
+        }
+
+        [TestMethod]
         public void TestSort_Reverse()
         {
             VerifySort(input: new[] { 5,4,3,2,1,0 }, expected: new int[] { 0,1,2,3,4,5 });
@@ -59,13 +67,13 @@ namespace TestSort
         [TestMethod]
         public void TestSort_Fuzz_Small()
         {
-            VerifyFuzz(10, 10);
+            VerifyFuzz(arrSize: 10, range: 10);
         }
 
         [TestMethod]
         public void TestSort_Fuzz_Large()
         {
-            VerifyFuzz(10000, 10000000);
+            VerifyFuzz(arrSize: 10000, range: 10000000);
         }
 
         public static void VerifyFuzz(uint arrSize, int range) {
