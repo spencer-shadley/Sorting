@@ -13,17 +13,18 @@ namespace TestSort
         };
 
         [TestMethod]
-        public void TestSort_Simple()
+        public void TestSort_Null()
         {
-            VerifySort(input: new[] { 1, 9, 5, 3, 2 }, expected: new int[] { 1, 2, 3, 5, 9 });
+            foreach (ISort sort in Sorts)
+            {
+                Assert.ThrowsException<ArgumentNullException>(() => sort.Sort(null));
+            }
         }
 
         [TestMethod]
-        public void TestSort_Null()
+        public void TestSort_Simple()
         {
-            foreach (ISort sort in Sorts) {
-                Assert.ThrowsException<ArgumentNullException>(() => sort.Sort(null));
-            }
+            VerifySort(input: new[] { 1, 9, 5, 3, 2 }, expected: new int[] { 1, 2, 3, 5, 9 });
         }
 
         [TestMethod]
@@ -75,9 +76,17 @@ namespace TestSort
         }
 
         [TestMethod]
-        public void TestSort_Fuzz_Large()
+        public void TestSort_Fuzz_Medium()
         {
             VerifyFuzz(arrSize: 10000, range: 10000000);
+        }
+
+        [TestMethod]
+        public void TestSort_Fuzz_Random() {
+            var random = new Random();
+            var arrSize = (uint)Math.Abs(new Random().Next(1000000)); // no more than one million elements
+            int range = random.Next();
+            VerifyFuzz(arrSize, range);
         }
 
         public static void VerifyFuzz(uint arrSize, int range) {
